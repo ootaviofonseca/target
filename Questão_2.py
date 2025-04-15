@@ -1,18 +1,21 @@
-def existe_A (entrada):
-    cont = 0
-    
-    for i in entrada:
-        if i == 'A' or i == 'a':
-            cont += 1
-            
+def fibonacci(entrada):
+    if entrada == 0 or entrada == 1:
+        return True
+    else:
+        sequenciaFib = [0, 1] 
+        
+        
+        while sequenciaFib[-1] < entrada:
+            sequenciaFib.append(sequenciaFib[-1] + sequenciaFib[-2])
+      
+        if entrada in sequenciaFib: 
+            return True 
+        else:
+            return False
 
-    return cont
-
-
-entrada = input()
-cont = existe_A(entrada)
-if  cont > 0:
-    print(f"A letra A está presente {cont} vezes")
-else:
-    print("A letra A não está presente")
-    
+entrada = int(input())
+if entrada >= 0 :
+    if fibonacci(entrada): 
+        print(f"O número {entrada} está na sequência")
+    else: 
+        print(f"O número {entrada} não está na sequência")
